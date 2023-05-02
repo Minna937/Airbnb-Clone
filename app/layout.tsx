@@ -23,7 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ClientOnly>
-          <Modal />
+          <Modal
+          isOpen={true} />
           <Navbar />
         </ClientOnly>
         {children}
