@@ -13,6 +13,10 @@ import {
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 
 const RegisterModal = () => {
+    const registerModal = useRegisterModal();
+    const [isLoading, setIsLoading] = useState(false);
+
+
     return (
         <div>
 
