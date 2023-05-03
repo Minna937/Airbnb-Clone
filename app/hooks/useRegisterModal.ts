@@ -6,10 +6,11 @@ interface RegisterModalStore {
     onClose: () => void;
 }
 
+// zustand
 const useRegisterModal = create<RegisterModalStore>((set) => ({
-    isOpen: false,
+    isOpen: true,
     onOpen: () => set({ isOpen: true }),
     onClose: () => set({ isOpen: false })
 }))
 
-export default RegisterModalStore;
+export default useRegisterModal;
