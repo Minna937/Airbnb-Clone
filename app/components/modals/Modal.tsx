@@ -155,7 +155,8 @@ const Modal: React.FC<ModalProps> = (
                                 items-center
                                 gap-4
                                 w-full'>
-                                    <Button label="My Button"/>
+                                    <Button 
+                                    label="My Button"/>
                                 </div>
 
                             </div>
