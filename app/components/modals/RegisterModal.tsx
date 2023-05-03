@@ -12,6 +12,7 @@ import {
 
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import Modal from './Modal';
+import Heading from '../Heading';
 
 const RegisterModal = () => {
     const registerModal = useRegisterModal();
@@ -32,27 +33,33 @@ const RegisterModal = () => {
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true);
-        axios.post('/api/register',data)
-        .then(()=>{
-            registerModal.onClose();
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
-        .finally(()=>{
-            setIsLoading(false);
-        })
+        axios.post('/api/register', data)
+            .then(() => {
+                registerModal.onClose();
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+            .finally(() => {
+                setIsLoading(false);
+            })
     }
 
+    const bodyContent = (
+        <div className='flex flex-col gap-4'>
+            <Heading />
+        </div>
+    )
 
     return (
-      <Modal disabled={isLoading}
-      isOpen={registerModal.isOpen}
-      title='Register'
-      actionLabel='Continue'
-      onClose={registerModal.onClose}
-      onSubmit={handleSubmit(onSubmit)}
-      />
+        <Modal disabled={isLoading} //usrs cannot change the form when it's loading
+            isOpen={registerModal.isOpen}
+            title='Register'
+            actionLabel='Continue'
+            onClose={registerModal.onClose}
+            onSubmit={handleSubmit(onSubmit)}
+            body={bodyContent}
+        />
     )
 }
 
