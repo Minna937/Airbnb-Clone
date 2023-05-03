@@ -1,7 +1,8 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
-import {IoMdClose} from 'react-icons/io'
+import { IoMdClose } from 'react-icons/io';
+import Button from '../Button';
 
 interface ModalProps {
     isOpen?: boolean;
@@ -128,6 +129,7 @@ const Modal: React.FC<ModalProps> = (
                                 relative
                                 border-b-[1px]'>
                                 <button
+                                    onClick={handleClose}
                                     className="
                                     p-1
                                     border-0
@@ -135,11 +137,30 @@ const Modal: React.FC<ModalProps> = (
                                     transition
                                     absolute
                                     left-9">
-                                        <IoMdClose size={18} />
-                                    </button>
+                                    <IoMdClose size={18} />
+                                </button>
+                                <div className='text-lg font-semibold'>
+                                    {title}
                                 </div>
                             </div>
+                            {/* BODY */}
+                            <div className='relative p-6 flex-auto'>
+                                {body}
+                            </div>
+                            {/* FOOTER */}
+                            <div className='flex flex-col gap-2 p-6'>
+                                <div className='
+                                flex 
+                                flex-row
+                                items-center
+                                gap-4
+                                w-full'>
+                                    <Button label="My Button"/>
+                                </div>
+
+                            </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </>);
