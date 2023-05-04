@@ -77,7 +77,7 @@ const Modal: React.FC<ModalProps> = (
             fixed
             inset-0
             z-50
-            outlin-none
+            outline-none
             focus:outline-none
             bg-neutral-800/70'>
                 <div
@@ -94,6 +94,7 @@ const Modal: React.FC<ModalProps> = (
                 md:h-auto
                 '>
                     {/* CONTENT */}
+                
                     <div
                         className={`
                             translate
@@ -119,6 +120,7 @@ const Modal: React.FC<ModalProps> = (
                             focus:outline-none'
                         >
                             {/* HEADER */}
+                      
                             <div
                                 className='
                                 flex
