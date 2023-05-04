@@ -13,6 +13,7 @@ import {
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import Modal from './Modal';
 import Heading from '../Heading';
+import Input from '../inputs/Inputs';
 
 const RegisterModal = () => {
     const registerModal = useRegisterModal();
@@ -49,7 +50,15 @@ const RegisterModal = () => {
         <div className='flex flex-col gap-4'>
             <Heading 
             title="Welcome to Airbnb"
-            subtitle='Crean an account!'
+            subtitle="Crean an account!"
+            />
+            <Input 
+            id="email"
+            label="Email"
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            required
             />
         </div>
     )
@@ -57,8 +66,8 @@ const RegisterModal = () => {
     return (
         <Modal disabled={isLoading} //usrs cannot change the form when it's loading
             isOpen={registerModal.isOpen}
-            title='Register'
-            actionLabel='Continue'
+            title="Register"
+            actionLabel="Continue"
             onClose={registerModal.onClose}
             onSubmit={handleSubmit(onSubmit)}
             body={bodyContent}
