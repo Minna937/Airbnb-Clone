@@ -14,6 +14,8 @@ import useRegisterModal from "@/app/hooks/useRegisterModal";
 import Modal from './Modal';
 import Heading from '../Heading';
 import Input from '../inputs/Inputs';
+import { toast } from 'react-hot-toast'
+import { toNamespacedPath } from 'path';
 
 const RegisterModal = () => {
     const registerModal = useRegisterModal();
@@ -39,7 +41,7 @@ const RegisterModal = () => {
                 registerModal.onClose();
             })
             .catch((error) => {
-                console.log(error)
+                toast.error('Something went wrong!')
             })
             .finally(() => {
                 setIsLoading(false);
@@ -48,17 +50,34 @@ const RegisterModal = () => {
 
     const bodyContent = (
         <div className='flex flex-col gap-4'>
-            <Heading 
-            title="Welcome to Airbnb"
-            subtitle="Crean an account!"
+            <Heading
+                title="Welcome to Airbnb"
+                subtitle="Crean an account!"
             />
-            <Input 
-            id="email"
-            label="Email"
-            disabled={isLoading}
-            register={register}
-            errors={errors}
-            required
+            <Input
+                id="email"
+                label="Email"
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+            />
+            <Input
+                id="name"
+                label="Name"
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+            />
+            <Input
+                id="password"
+                type="password"
+                label="Password"
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
             />
         </div>
     )
