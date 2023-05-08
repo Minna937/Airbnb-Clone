@@ -23,7 +23,8 @@ export default async function getCurrentUser() {
             return null
         }
         return currentUser;
-    } catch (errpr: any) {
+
+    } catch (error: any) {
         return null;
     }
 }
