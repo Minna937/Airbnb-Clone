@@ -3,7 +3,6 @@ import { TbBeach } from 'react-icons/tb';
 import { GiWindmill } from 'react-icons/gi';
 import { MdOutlineVilla } from 'react-icons/md';
 import CategoryBox from "../CategoryBox";
-import { useRouter, useSearchParams } from "next/navigation";
 
 export const categories = [{
     label: 'Beach',
@@ -24,8 +23,7 @@ export const categories = [{
 
 const Categories = () => {
     return (
-        const router = useRouter();
-        const params = useSearchParams();
+    
         <Container>
             <div className="
             pt-4
