@@ -19,17 +19,33 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 
     const handleClick = useCallback(() => {
         let currentQuery = {};
-
-        if (params){
+        if (params) {
             currentQuery = qs.parse(params.toString());
         }
+
+        const updatedQuery: any = {
+            ...currentQuery,
+            category: label
+        };
+
+        // deselect it if it's already selected before
+        if (params?.get('category') === label) {
+            delete updatedQuery.category;
+        }
+
+        const url = qs.stringifyUrl({
+            url: '/',
+            query: updatedQuery
+        }, { skipNull: true });
+
+        router.push(url);
+    }, [label, params, router]);
+
     
-    }, []);
-
-
-
     return (
-        <div className={`
+        <div 
+        onClick = {handleClick}
+        className={`
         flex
         flex-col
         items-center
