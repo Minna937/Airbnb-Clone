@@ -30,7 +30,6 @@ const RegisterModal = () => {
             errors,
         } } = useForm<FieldValues>({
             defaultValues: {
-                name: '',
                 email: '',
                 password: ''
             }
