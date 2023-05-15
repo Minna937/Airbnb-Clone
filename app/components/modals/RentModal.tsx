@@ -27,20 +27,23 @@ const RentModal = () => {
         handleSubmit,
         setValue,
         watch,
-        formState: { errors },
-        reset } = useForm<FieldValues>({
-            defaultValues: {
-                category: '',
-                location: null,
-                guestCount: 1,
-                roomCount: 1,
-                bathroomCount: 1,
-                imageSrc: '',
-                price: 1,
-                title: '',
-                description: ''
-            }
-        });
+        formState: {
+            errors,
+        },
+        reset,
+    } = useForm<FieldValues>({
+        defaultValues: {
+            category: '',
+            location: null,
+            guestCount: 1,
+            roomCount: 1,
+            bathroomCount: 1,
+            imageSrc: '',
+            price: 1,
+            title: '',
+            description: '',
+        }
+    });
 
     const category = watch('category');
 
@@ -48,7 +51,7 @@ const RentModal = () => {
         setValue(id, value, {
             shouldDirty: true,
             shouldTouch: true,
-            shouldValidate: true,
+            shouldValidate: true
         })
     }
 
@@ -80,30 +83,30 @@ const RentModal = () => {
                 title="Which of these best describes your place?"
                 subtitle="Pick a category"
             />
-            <div className="
-  grid 
-  grid-cols-1 
-  md:grid-cols-2 
-  gap-3
-  max-h-[50vh]
-  overflow-y-auto
-">
-                {/*{} and return can be omitted by (); */}
-                {categories.map((item) => {
-                    return (<div key={item.label} className="col-span-1">
+            <div
+                className="
+              grid 
+              grid-cols-1 
+              md:grid-cols-2 
+              gap-3
+              max-h-[50vh]
+              overflow-y-auto
+            "
+            >
+                {categories.map((item) => (
+                    <div key={item.label} className="col-span-1">
                         <CategoryInput
-                            onClick={(category) => { setCustomValue('category', category) }}
+                            onClick={(category) =>
+                                setCustomValue('category', category)}
                             selected={category === item.label}
                             label={item.label}
                             icon={item.icon}
                         />
                     </div>
-                    )
-                })}
+                ))}
             </div>
         </div>
     )
-
 
     return (
         <Modal
