@@ -1,6 +1,7 @@
 'use client';
 
 import useCountries from "@/app/hooks/useCountries";
+import ReactCountryFlag from "react-country-flag";
 import Select from 'react-select';
 
 export type CountrySelectValue = {
@@ -8,13 +9,14 @@ export type CountrySelectValue = {
   label: string;
   latlng: number[];
   region: string;
-  value: string;
+  value: string
 };
 
 interface CountrySelectProps {
   value?: CountrySelectValue;
   onChange: (value: CountrySelectValue) => void;
 };
+
 
 const CountrySelect: React.FC<CountrySelectProps> = ({
   value,
@@ -33,7 +35,13 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
         onChange={(value) => onChange(value as CountrySelectValue)}
         formatOptionLabel={(option: any) => (
           <div className="flex flex-row items-center gap-3">
-            <div>{option.flag}</div>
+          <ReactCountryFlag
+            className="w-[1em] h-[1em]"
+            countryCode={option.value}
+            svg
+            aria-label={option.label}
+          />
+        
             <div>
               {option.label},
               <span className="text-neutral-800 ml-1">
