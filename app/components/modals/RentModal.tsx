@@ -120,7 +120,7 @@ const RentModal = () => {
                 <CountrySelect
                 value={location} 
                 onChange={(value)=>setCustomValue('location',value)}/>
-                <Map />
+                {/* <Map /> */}
             </div>
         )
     }
