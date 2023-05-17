@@ -50,7 +50,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
             gap-4
             text-neutral-600
             ">
-                        <TbPhotoPlus />
+                        <TbPhotoPlus size={50}/>
                     </div>
                 )
             }}
