@@ -50,6 +50,8 @@ const RentModal = () => {
     const category = watch('category');
     const location = watch('location');
 
+    const Map = useMemo(() => dynamic(() => import('../Map'),{ssr:false}),[location]);
+
     const setCustomValue = (id: string, value: any) => {
         setValue(id, value, {
             shouldDirty: true,
@@ -118,8 +120,8 @@ const RentModal = () => {
                     title="Where is your place located?"
                     subtitle="Help guests find you!" />
                 <CountrySelect
-                value={location} 
-                onChange={(value)=>setCustomValue('location',value)}/>
+                    value={location}
+                    onChange={(value) => setCustomValue('location', value)} />
                 <Map />
             </div>
         )
