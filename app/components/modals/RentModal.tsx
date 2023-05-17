@@ -50,10 +50,6 @@ const RentModal = () => {
     const category = watch('category');
     const location = watch('location');
 
-    const Map = useMemo(() => dynamic(() => import('../Map'), { 
-        ssr: false 
-      }), [location]);
-
     const setCustomValue = (id: string, value: any) => {
         setValue(id, value, {
             shouldDirty: true,
@@ -115,18 +111,16 @@ const RentModal = () => {
         </div>
     );
 
-    if (step === STEPS.LOCATION){
+    if (step === STEPS.LOCATION) {
         bodyContent = (
             <div className="flex flex-col gap-8">
-                <Heading 
-                title="Where is your place located?"
-                subtitle="Help guests find you!" />
+                <Heading
+                    title="Where is your place located?"
+                    subtitle="Help guests find you!" />
                 <CountrySelect
                 value={location} 
                 onChange={(value)=>setCustomValue('location',value)}/>
-                <Map 
-                center={location?.laglng}
-                />
+                <Map />
             </div>
         )
     }
