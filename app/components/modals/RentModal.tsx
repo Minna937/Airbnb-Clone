@@ -4,6 +4,7 @@ import useRentModal from "@/app/hooks/useRentModal";
 import Modal from "./Modal";
 import { useMemo, useState } from "react";
 import Heading from "../Heading";
+import Counter from "../inputs/Counter";
 import { categories } from "../navbar/Categories";
 import CategoryInput from "../inputs/CategoryInput";
 import CountrySelect from "../inputs/CountrySelect";
@@ -49,6 +50,7 @@ const RentModal = () => {
 
     const category = watch('category');
     const location = watch('location');
+    const guestCount = watch('guestCount');
 
     const Map = useMemo(() => dynamic(() => import('../Map'), {
         ssr: false
@@ -133,9 +135,14 @@ const RentModal = () => {
     if (step === STEPS.INFO) {
         bodyContent = (
             <div className="flex flex-col gap-8">
-                <Heading 
-                title="Sahre some basics about your place"
-                subtitle="What amenities do you have?" 
+                <Heading
+                    title="Sahre some basics about your place"
+                    subtitle="What amenities do you have?"
+                />
+                <Counter
+                    title="Guests"
+                    subtitle="How many guests do you allow?"
+                    value={guestCount}
                 />
             </div>
         )
