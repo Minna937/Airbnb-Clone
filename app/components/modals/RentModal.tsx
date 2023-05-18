@@ -13,6 +13,8 @@ import CountrySelect from "../inputs/CountrySelect";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import dynamic from "next/dynamic";
 import axios from "axios";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 enum STEPS {
     CATEGORY = 0,
@@ -24,6 +26,7 @@ enum STEPS {
 }
 
 const RentModal = () => {
+   const router = useRouter();
     const rentModal = useRentModal();
 
     const [step, setStep] = useState(STEPS.CATEGORY);
@@ -88,7 +91,16 @@ const RentModal = () => {
         setIsLoading(true);
         axios.post('/api/listings',data)
         .then(()=>{
-            toast.success('Listing created!')
+            toast.success('Listing Created!');
+            router.refresh();
+            reset();
+            setStep(STEPS.CATEGORY);
+            rentModal.onClose();
+        })
+        .catch(() =>{
+            toast.error('Something went wrong.');
+        }).finally(()=>{
+            setIsLoading(false);
         })
     }
 
@@ -253,7 +265,7 @@ const RentModal = () => {
         <Modal
             isOpen={rentModal.isOpen}
             onClose={rentModal.onClose}
-            onSubmit={onNext}
+            onSubmit={handleSubmit(onSubmit)}
             actionLabel={actionLabel}
             secondaryActionLabel={secondaryActionLabel}
             secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
