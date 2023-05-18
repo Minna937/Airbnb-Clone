@@ -6,6 +6,7 @@ import { useCallback } from "react";
 import { TbPhotoPlus } from "react-icons/tb";
 
 
+
 declare global {
     var cloudinary: any
 };
@@ -23,11 +24,10 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         onChange(result.info.secure_url);
     }, [onChange]);
 
-
     return (
         <CldUploadWidget
             onUpload={handleUpload}
-            uploadPreset={process.env.CLOUDINARY_UPLOAD_PRESET}
+            uploadPreset="smoxqazh"
             options={{
                 maxFiles: 1
             }}>
@@ -70,6 +70,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                 )
             }}
         </CldUploadWidget>
+      
     )
 };
 
