@@ -104,9 +104,6 @@ const RentModal = () => {
         })
     }
 
-
-
-
     const actionLabel = useMemo(() => {
         if (step === STEPS.PRICE) {
             return 'Create';

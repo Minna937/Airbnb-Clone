@@ -51,7 +51,7 @@ const RegisterModal = () => {
             .finally(() => {
                 setIsLoading(false);
             })
-    }
+    };
 
     const toggle = useCallback(() => {
         loginModal.onOpen();
