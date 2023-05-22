@@ -38,10 +38,7 @@ const EmptyState: React.FC<EmptyState> = ({
             onClick={() => router.push('/')}
           />
         )}
-
       </div>
-
-
     </div>
   )
 }
