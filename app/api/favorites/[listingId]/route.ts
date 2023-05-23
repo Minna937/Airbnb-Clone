@@ -58,7 +58,7 @@ export async function DELETE(
 
     let favoriteIds = [...(currentUser.favoriteIds || [])];
 
-    favoriteIds = favoriteIds.filter((id) => { id !== listingId }); //remove id which matches listingId;
+    favoriteIds = favoriteIds.filter((id) =>  id !== listingId ); //remove id which matches listingId;
 
     const user = await prisma.user.update({
         where: {

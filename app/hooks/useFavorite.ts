@@ -57,7 +57,7 @@ const useFavorite = ({
 
 return {
     hasFavorited,
-    toggleFavorite
+    toggleFavorite,
 }
 };
 
