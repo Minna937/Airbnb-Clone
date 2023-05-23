@@ -1,32 +1,30 @@
-import prisma from '@/app/libs/prismadb';
+import prisma from "@/app/libs/prismadb";
 
-interface Iparams {
-    listingId?: string;
+interface IParams {
+  listingId?: string;
 }
 
-export async function getListingById(
-    params: Iparams
+export default async function getListingById(
+  params: IParams
 ) {
-    try {
-        const { listingId } = params;
+  try {
+    const { listingId } = params;
 
-        const listing = await prisma.listing.findUnique({
-            where: {
-                id: listingId
-            },
+    const listing = await prisma.listing.findUnique({
+      where: {
+        id: listingId,
+      },
+      include: {
+        user: true
+      }
+    });
 
-            include: {
-                user: true
-            }
-        });
-
-        if (!listingId) {
-            return null
-        }
-
-        return listing;
+    if (!listing) {
+      return null;
     }
-    catch (error: any) {
-        throw new Error(error);
-    }
+
+    return listing;
+  } catch (error: any) {
+    throw new Error(error);
+  }
 }
