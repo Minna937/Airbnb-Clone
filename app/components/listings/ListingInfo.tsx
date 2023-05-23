@@ -70,8 +70,8 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
             {category && (
                 <ListingCategory
                     icon={category.icon}
-                    label={category?.label}
-                    description={category?.description}
+                    label={category.label}
+                    description={category.description}
                 />
             )}
         </div>

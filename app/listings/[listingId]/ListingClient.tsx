@@ -22,7 +22,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
     const category = useMemo(() => {
         return categories.find((item) => {
-            item.label === listing.category
+           return item.label === listing.category
         })
     }, [listing.category]);
 
