@@ -1,6 +1,6 @@
 import { Nunito } from "next/font/google";
 
-import './globals.css'
+import './globals.css';
 
 import Navbar from "./components/navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
@@ -16,6 +16,7 @@ import getCurrentUser from "./actions/getCurrentUser";
 export const metadata = {
   title: 'Airbnb',
   description: 'Airbnb clone',
+  icons: { icon: '/icon.ico' },
 }
 
 const font = Nunito({
@@ -38,10 +39,10 @@ export default async function RootLayout({
           <RentModal />
           <LoginModal />
           <RegisterModal />
-          <Navbar currentUser={currentUser}/>
+          <Navbar currentUser={currentUser} />
         </ClientOnly>
         <div className="pb-20 pt-28">
-        {children}
+          {children}
         </div>
       </body>
     </html>
