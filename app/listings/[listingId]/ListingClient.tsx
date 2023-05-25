@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 import { eachDayOfInterval, differenceInCalendarDays } from "date-fns";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { Range } from "react-date-range";
 
 const initialDateRange = {
     startDate: new Date(),
@@ -37,6 +38,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
     const disabledDates = useMemo(() => {
         let dates: Date[] = [];
+
         reservations.forEach((reservation) => {
             const range = eachDayOfInterval({
                 start: new Date(reservation.startDate),
@@ -44,14 +46,14 @@ const ListingClient: React.FC<ListingClientProps> = ({
             });
 
             dates = [...dates, ...range];
-
-            return dates;
-        })
+        });
+        return dates;
     }, [reservations]);
+
 
     const [isLoading, setIsLoading] = useState(false);
     const [totalPrice, setTotalPrice] = useState(listing.price);
-    const [dateRange, setDateRange] = useState(initialDateRange);
+    const [dateRange, setDateRange] = useState<Range>(initialDateRange);
 
     const onCreateReservation = useCallback(() => {
         if (!currentUser) {
