@@ -1,6 +1,7 @@
 'use client';
 
 import { Range } from 'react-date-range';
+import Calendar from "../inputs/Calendar";
 
 interface ListingReservationProps {
     price: number;
@@ -39,6 +40,12 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
                     night
                 </div>
             </div>
+            <hr />
+            <Calendar
+                value={dateRange}
+                disabledDates={disabledDates}
+                onchange={(value) => onChangeDate(value.selection)}
+            />
         </div>
     )
 };
