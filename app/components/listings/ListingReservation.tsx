@@ -7,17 +7,17 @@ interface ListingReservationProps {
     price: number;
     dateRange: Range;
     totalPrice: number;
-    onChange: (value: Range) => void;
+    onChangeDate: (value: Range) => void;
     onSubmit: () => void;
     disabled?: boolean;
-    disabledDates: Date[]
+    disabledDates: Date[];
 }
 
 const ListingReservation: React.FC<ListingReservationProps> = ({
     price,
     dateRange,
     totalPrice,
-    onChange,
+    onChangeDate,
     onSubmit,
     disabled,
     disabledDates
@@ -44,8 +44,25 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
             <Calendar
                 value={dateRange}
                 disabledDates={disabledDates}
-                onchange={(value) => onChangeDate(value.selection)}
+                onChange={(value) => onChangeDate(value.selection)}
             />
+            <hr />
+            <div className="
+            p-4
+            flex
+            flex-row
+            items-center
+            justify-between
+            font-semibold
+            text-lg">
+                <div>
+                    Total
+                </div>
+                <div>
+                € {totalPrice}
+                </div>
+
+            </div>
         </div>
     )
 };
