@@ -76,7 +76,7 @@ const SearchModal = () => {
             updatedQuery.endDate = formatISO(dateRange.endDate);
         };
 
-        const url = qs.stringify({
+        const url = qs.stringifyUrl({
             url: '/',
             query: updatedQuery
         }, { skipNull: true });
