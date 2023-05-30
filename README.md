@@ -14,9 +14,9 @@ This is a repository for a Full Stack Airbnb Clone with Next.js 13 App Router: R
 
 ### Frameworks and Libraries
 
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
 
 ### Database:
 
@@ -58,3 +58,73 @@ This is a repository for a Full Stack Airbnb Clone with Next.js 13 App Router: R
 
 ## Homepage
 <img width="1322" alt="Screen Shot 2023-05-30" src="https://github.com/Minna937/Airbnb-Clone/blob/main/public/screenshots/11.png?raw=true">
+
+## Sign up
+<img width="1322" alt="Screen Shot 2023-05-30" src="https://github.com/Minna937/Airbnb-Clone/blob/main/public/screenshots/signup.png?raw=true">
+
+## Login
+<img width="1322" alt="Screen Shot 2023-05-30" src="https://github.com/Minna937/Airbnb-Clone/blob/main/public/screenshots/login.png?raw=true">
+
+## Airbnb your home
+<img width="1322" alt="Screen Shot 2023-05-30" src="https://github.com/Minna937/Airbnb-Clone/blob/main/public/screenshots/post1.png?raw=true">
+<img width="1322" alt="Screen Shot 2023-05-30" src="https://github.com/Minna937/Airbnb-Clone/blob/main/public/screenshots/post2.png?raw=true">
+<img width="1322" alt="Screen Shot 2023-05-30" src="https://github.com/Minna937/Airbnb-Clone/blob/main/public/screenshots/post3.png?raw=true">
+<img width="1322" alt="Screen Shot 2023-05-30" src="https://github.com/Minna937/Airbnb-Clone/blob/main/public/screenshots/post4.png?raw=true">
+
+## Search properties
+<img width="1322" alt="Screen Shot 2023-05-30" src="https://github.com/Minna937/Airbnb-Clone/blob/main/public/screenshots/search.png?raw=true">
+
+## Book a property
+<img width="1322" alt="Screen Shot 2023-05-30" src="https://github.com/Minna937/Airbnb-Clone/blob/main/public/screenshots/booking.png?raw=true">
+
+## Managing properties
+<img width="1322" alt="Screen Shot 2023-05-30" src="https://github.com/Minna937/Airbnb-Clone/blob/main/public/screenshots/myproperties.png?raw=true">
+
+# Getting started
+### Cloning the repository
+
+```shell
+git clone https://github.com/AntonioErdeljac/next13-airbnb-clone.git
+```
+
+### Install packages
+
+```shell
+npm i
+```
+
+### Setup .env file
+
+
+```js
+DATABASE_URL=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GITHUB_ID=
+GITHUB_SECRET=
+NEXTAUTH_SECRET=
+```
+
+### Setup Prisma
+
+```shell
+npx prisma db push
+
+```
+
+### Start the app
+
+```shell
+npm run dev
+```
+
+## Available commands
+
+Running commands with npm `npm run [command]`
+
+| command         | description                              |
+| :-------------- | :--------------------------------------- |
+| `dev`           | Starts a development instance of the app |
+
+
+
