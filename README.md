@@ -51,9 +51,9 @@ This is a repository for a Full Stack Airbnb Clone with Next.js 13 App Router: R
     - For example we will filter out properties that have a reservation in your desired date range to travel
 - Favorites system
 - Shareable URL filters
-    - Lets say you select a category, location and date range, you will be able to share URL with a logged out friend in another browser and they will see the same results
+    - once select a category, location and date range, user will be able to share URL with a logged out friend in another browser and they will see the same results
 - How to write POST and DELETE routes in route handlers (app/api)
-- How to fetch data in server react components by directly accessing database (WITHOUT API! like Magic!)
+- How to fetch data in server react components by directly accessing database
 - How to handle files like error.tsx and loading.tsx which are new Next 13 templating files to unify loading and error handling
 - How to handle relations between Server and Child components!
 
